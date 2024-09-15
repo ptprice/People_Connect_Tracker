@@ -58,11 +58,11 @@ const main = async () => {
         const department = await inquirer.prompt([
             {
                 type: 'input',
-                name: 'name',
+                name: 'department_name',
                 message: 'What is the name of the department?',
             }
         ]);
-        const newDepartment = await db.addDepartment(department.name);
+        const newDepartment = await db.addDepartment(department.department_name);
         console.log(`Added department ${newDepartment.name} with id ${newDepartment.id}.`);
     }
     if (answers.MenuOption === "AddRole") {
@@ -74,7 +74,7 @@ const main = async () => {
         const role = await inquirer.prompt([
             {
                 type: 'input',
-                name: 'title',
+                name: 'role_title',
                 message: 'What is the title of the role?',
             },
             {
@@ -89,7 +89,7 @@ const main = async () => {
                 choices: departmentChoices,
             }
         ]);
-        const newRole = await db.addRole(role.title, role.salary, role.department_id);
+        const newRole = await db.addRole(role.role_title, role.salary, role.department_id);
         console.log(`Added role ${newRole.title} with id ${newRole.id}.`);
     }
     if (answers.MenuOption === "AddEmployee") {

@@ -24,12 +24,12 @@ class DB {
             const result = await this.query("SELECT * FROM employee");
             return result.rows;
         }
-        async addDepartment(department) {
-            const result = await this.query("INSERT INTO department (name) VALUES ($1) RETURNING *", [department]);
+        async addDepartment(department_name) {
+            const result = await this.query("INSERT INTO department (department_name) VALUES ($1) RETURNING *", [department_name]);
             return result.rows[0];
         }
-        async addRole(title, salary, department_id) {
-            const result = await this.query("INSERT INTO role (title, salary, department_id) VALUES ($1, $2, $3) RETURNING *", [title, salary, department_id]);
+        async addRole(role_title, salary, department_id) {
+            const result = await this.query("INSERT INTO role (role_title, salary, department_id) VALUES ($1, $2, $3) RETURNING *", [role_title, salary, department_id]);
             return result.rows[0];
         }
         async addEmployee(first_name, last_name, role_id, manager_id) {
