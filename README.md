@@ -1,5 +1,8 @@
 
 # The People Connect Tracker ![License](https://img.shields.io/badge/License-MIT-blue.svg) 
+
+VIDEO DEMO https://drive.google.com/file/d/1wwB-GPcFCPar5h3B8xpQdGiDrtFPvLJB/view
+
 ## Description
 A command-line application to manage a company's employee database, using Node.js, Inquirer, and PostgreSQL.
 ## Table of Contents
